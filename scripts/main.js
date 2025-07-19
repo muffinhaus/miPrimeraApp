@@ -1,10 +1,14 @@
 const contador = document.getElementById("count-el");
 let counter = 0;
 let conteosAnteriores = 0;
-let resetBtn = null; // la declaramos aqui en el scope fuera para luego dentro
-//de la funcion no hacer const
+let resetBtn = null;
+//NECESITAMOS que el resetBtn recupere el valor de null para poder hacer
+//desaparecer el boton al pulsar RESET
 
-//mucho cuidado con la declaracoin de variables cuando
+// la declaramos aqui en el scope global fuera de la funcion para luego dentro
+//de la funcion no hacer const sino let y asi poder modificar su valor a null
+
+// OJO! --> mucho cuidado con la declaracoin de variables cuando
 // se hace const en los componentes, ya que luego
 // si necesitamos que esa variable cambie de valor no se puede
 // actualizar
@@ -36,15 +40,6 @@ function save() {
     reset();
   }
 }
-
-//segunda forma
-
-// const incrementBtn = document.getElementById("increment-btn");
-// const saveBtn = document.getElementById("save-btn");
-
-//usamos la funcion
-
-// incrementBtn.addEventListener("click",increment)
 
 function reset() {
   resetBtn = document.createElement("button");
